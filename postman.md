@@ -2,15 +2,15 @@
 
 # Webes alkalmazások
 
-Azon alkalmazásokat nevezünk webes alkalmazásoknak, melyek felhasználói felülete
+Azon alkalmazásokat nevezzük webes alkalmazásoknak, melyek felhasználói felülete
 böngészőből vehető igénybe. Ezek azért terjedtek el annyira, mert
 böngésző feltehetően minden számítógépre van telepítve, és
-az alkalmazás igénybe vételére további telepítésre nincs szükség.
+az alkalmazás igénybevételéhez további telepítésre nincs szükség.
 
 Jelenleg a legelterjedtebb böngészők a Google Chrome, a Mozilla Firefox és a 
 Microsoft Edge nevű böngészője. Különböző statisztikák vannak a 
 böngészők elterjedésével kapcsolatban (pl. https://gs.statcounter.com/),
-de annyi tisztán látszik, hogy a Chrome sokkal széleskörűebben használt, 
+de annyi tisztán látszik, hogy a Chrome szélesebb körben használt, 
 mint a többi. A Microsoft böngészője a Windows 10-ben jelent meg 2015-ben,
 de 2019-ben újraírták Chromium alapokra (mely egy nyílt forráskódú
 böngésző alap), melyre a Google Chrome is épül. Persze speciális környezetekben,
@@ -19,13 +19,13 @@ pl. bankoknál vagy közigazgazásban más lehet az elterjedtségük (pl. belső
 
 Régebben sok probléma volt, hogy a böngészők bár szabványokra építenek, mégis
 másképp működtek (kompatibilitási problémák). Ma már erre vannak megoldások,
-azonban tesztelési szempontból még mindig oda kell rá figyelni.
+azonban tesztelési szempontból még mindig oda kell figyelni.
 
 A webes alkalmazásokat úgy is szokták jellemezni, hogy vékony klienses alkalmazások.
 Azért, mert a felhasználó számítógépén csak a felhasználói felület jelenik meg
 (a böngészőn belül), és az kommunikál egy (vagy több) központi számítógéppel,
-melyet szervernek neveznek. Az üzleti entitások, üzleti logika (üzleti folyamatok),
-az adatbázis mind a szerver oldalon jelennek meg. Ezért ezek kliens-szerver
+melyet szervernek neveznek. Az üzleti entitások, üzleti logika (üzleti folyamatok), valamint
+az adatbázis mind a szerver oldalon jelenik meg. Ezért ezek kliens-szerver
 alkalmazások. A szerver valamilyen szolgáltatást biztosít, míg a kliens ezt igénybe 
 veszi.
 
@@ -40,21 +40,21 @@ szerver oldalt backendnek nevezni.
 ![Frontend - backend](https://pics.me.me/frontend-backend-nice-looking-ui-40722684.png)
 
 A böngészős alkalmazások a frontend oldalon következő technológiákra építenek: HTTP, HTML, CSS, JavaScript.
-A HTTP protokoll a böngésző és a szerver közötti kommunikációra használt. Az internetes címek is 
+A HTTP protokollt a böngésző és a szerver közötti kommunikációra használják. Az internetes címek is 
 ezzel a betűszóval kezdődnek, pl. `http://www.example.com`. 
 
 Amikor a számítógépek közötti kommunikációról beszélünk, gyakran futunk bele az [OSI-modellbe](https://hu.wikipedia.org/wiki/OSI-modell), mely egy leírás, hogyan is kell elképzelnünk a hálózati kommunikációt.
 Egyelőre elég annyi, hogy ez egy hétrétegű modell. A különböző rétegeknek különböző implementációi vannak,
 alsó rétegekhez tartozik az Ethernet, felsőbb rétegekben a TCP/IP, és erre épül rá a legmagasabb
 rétegben elhelyezkedő HTTP, magas szintű protokoll. A protokoll nem más, mint egy szabálygyűjtemény,
-mely egy szabványban van rögzítve (RFC), mely leírja, hogy a kommunikáló felek hogyan viselkedhetnek.
+ami egy szabványban van rögzítve (RFC), mely leírja, hogy a kommunikáló felek hogyan viselkedhetnek.
 Webes alkalmazások esetén elképzelhető úgy, hogy a böngésző és a szerver hogyan kommunikál egymással.
 HTTPS protokoll esetén a végpontok között titkosítás történik. Ezt úgy képzeljük, hogy van egy
 TLS szabvány szerint működő titkosított csatorna, amiben a bájtok titkosítva utaznak, és a http
 mondja meg, hogyan kell ezeket a bájtokat értelmezni.
 
 A http esetén a különböző erőforrásokat, mint pl. weboldalakat, szöveges tartalmakat, képeket,
-videókat URL-lel azonosítjuk. Ezt írjuk be fenn a böngészőben. Ez a következő elemekből áll pl. a
+videókat URL-lel azonosítjuk. Ezt írjuk be fenn a böngészőbe. Ez a következő elemekből áll pl. a
 `http://example.com/article/12`:
 
 * Protokoll (`http` vagy `https`): hogyan kommunikál a böngésző a szerverrel, milyen protokoll szerint
@@ -62,13 +62,13 @@ videókat URL-lel azonosítjuk. Ezt írjuk be fenn a böngészőben. Ez a követ
 * Port: egy számítógépen belül a különböző szolgáltatatások, szoftverek megkülönböztetésére szolgál, ezzel mondjuk meg, hogy a számítógépen belül mivel szeretnénk kommunikálni
 * Elérési út: ezzel különböztetjük meg a különböző oldalakat, erőforrásokat
 
-A HTTP protokoll egy elég régóta használt protokoll még az 1990-es évekből. Arra találták ki, hogy
-a tudósok cikkeket oszthassanak meg egymással egyetemek közötti hálózatokon, ezeket meg tudják osztani, le tudják kérni, és egymásra tudjanak hivatkozni.
+A HTTP protokoll egy elég régóta használt szabvány még az 1990-es évekből. Arra találták ki, hogy
+a tudósok cikkeket kezeljenek egyetemek közötti hálózatokon, ezeket meg tudják osztani, le tudják kérni, és egymásra tudjanak hivatkozni.
 
 A HTTP kommunikáció legfontosabb ismérvei:
 
 * Kliens-szerver kommunikáció.
-* Kliens tipikusan a böngésző.
+* A kliens tipikusan a böngésző.
 * Kérés-válasz alapú protokoll: mindig a böngésző kérdez, és a szerver válaszol.
 * Szöveges: ember és számítógép által is olvasható, egyszerű szövegszerkesztőben megjeleníthető, azaz karakteres.
 * A kliens egy szöveges kérés üzenetet küld, a szerver erre egy szöveges válasz üzenettel válaszol. Minden üzenet tartalmazhat fejlécet és törzset, de nem szükségszerűen.
@@ -86,13 +86,13 @@ további állományra hivatkozhat, így ilyen sok HTTP kérés megy a szerver fe
 
 A HTTP esetén még meg kell említeni a státuszkódokat, amivel a szerver azt mondja meg, hogy
 ki tudja-e szolgálni a kéréseket. Mindegyikhez tartozik egy üzenet is, pl. `200` esetén `OK`,
-ekkor azt mondja a szerver, hogy sikeresen sikerült kiszolgálni a kérést, azaz elküldeni a válaszüzenetet.
+ekkor azt mondja a szerver, hogy sikerült kiszolgálni a kérést, azaz elküldeni a válaszüzenetet.
 A másik legismertebb a `404 - Not Found`. A `3xx` kérések esetén a böngészőnek még valamit csinálnia kell,
 `4xx` esetén hibás a kérés, `5xx` esetén valami baj van szerver oldalon.
 
-Könnyebb megjegyezhetőséget segíti a https://httpstatusdogs.com/ oldal.
+A könnyebb megjegyezhetőséget segíti a https://httpstatusdogs.com/ oldal.
 
-A HTTP metódussal mondjuk meg, hogy milyen irányú adatforgalmat szeretnénk. Tipikusan, ha 
+A HTTP metódussal mondjuk meg, hogy milyen irányú adatforgalmat szeretnénk lebonyolítani. Tipikusan, ha 
 lekérünk valamit, az HTTP `GET`, ha viszont kitöltünk egy űrlapot, akkor `POST` metódussal mondjuk meg,
 hogy adatot küldünk.
 
@@ -114,12 +114,12 @@ kommunikál a szerver oldallal.
 
 Ezek is pont olyan HTTP kérések és válaszok, mintha külön oldalakat kérnénk le, ezeket is
 ugyanúgy lehet monitorozni. A formátum, melyet használni szoktak átvitelre, mely a 
-HTTP kérések és válaszok törzsében utazik, az JSON. A JSON egy olyan adatformátum,
+HTTP kérések és válaszok törzsében utazik, a JSON. A JSON egy olyan adatformátum,
 mely a böngészőben futó programozási nyelv, a JavaScript segítségével nagyon könnyen
 előállítható és feldolgozható.
 
-Összefoglalva a böngésző HTTP üzenetekkel, AJAX-szal kommunikál a szerver oldallal,
-JSON üzeneteket küldve és fogadva. Azaz ez egy megoldás a felhasználói felület és a 
+Összefoglalva: a böngésző HTTP üzenetekkel, AJAX-szal kommunikál a szerver oldallal,
+JSON üzeneteket küldve és fogadva. Tehát ez egy megoldás a felhasználói felület és a 
 szerver oldal (frontend és backend) közötti kommunikációra. A frontend mindig
 JavaScript, azonban a backend bármilyen programozási nyelven írható, erről a kliens oldal
 semmit nem tud, csak annyit, hogy HTTP-n kell megszólítani és JSON formátumban kell küldeni az
