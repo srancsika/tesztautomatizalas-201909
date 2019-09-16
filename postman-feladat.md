@@ -2,17 +2,17 @@
 
 Adott egy alkalmazás a `http://www.learnwebservices.com/crystalball` címen.
 
-Ebbe az alkalmazásba a felhasználók jóslatokat fogalmazhatnak meg, amit a rendszer titkosít.
+Ebben az alkalmazásba a felhasználók jóslatokat fogalmazhatnak meg, amit a rendszer titkosít.
 Megadható, hogy mikor legyen olvasható a jóslat, akkor kinyílik, és meg lehet nézni annak tartalmát.
  
-Felhasználói felülettel nem rendelkezik, csupán RESTful webszolgáltatásokat biztosít, melyen keresztül más 
+Felhasználói felülettel nem rendelkezik, csupán RESTful webszolgáltatásokat biztosít, melyeken keresztül más 
 alkalmazások férhetnek hozzá. A `http://www.learnwebservices.com/crystalball/api/messages/` címen érhető el
 (vigyázz a perjelre a végén!).
 
 Az alkalmazás tartalmaz (legalább) egy hibát. Keresd meg!
 
-Jóslatot lehet felvenni, listázni, módosítani, törölni. Listázni lehet az összes jóslatot, de lehet egyet is.
-A rendszer a jóslatoknak egy egyedi azonosítót ad.
+Jóslatot lehet felvenni, listázni, módosítani, valamint törölni. Listázni lehet az összes jóslatot, de lehet egyet is.
+A rendszer a jóslatoknak egyedi azonosítót ad.
 
 ## Feladatok
 
@@ -23,7 +23,7 @@ Hozz létre egy tesztesetet, új collectiont, mely két kérésből áll, az els
 ellenőrzi, hogy a szöveg le van-e titkosítva. (Nem egyenlőség vizsgálat, hanem nem-egyenlőség vizsgálat! Használd
 a `!=` operátort!)
 
-Milyen teszteseteket írnál még? Mi okoz nehézséget az alkalmazás teszetelésében? 
+Milyen teszteseteket írnál még? Mi okoz nehézséget az alkalmazás tesztelésében? 
 
 ## API dokumentáció
 
