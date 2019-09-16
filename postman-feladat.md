@@ -45,7 +45,7 @@ A `/api/messages/` címen `GET` metódussal.
 
 ### Jóslat lekérése
 
-A `/api/messages/{id}` címen `GET` metódussal. Példa: `http://localhost:8080/api/messages/e306c8ca-4ae5-41ab-9f5e-5a193c4a5596`.
+A `/api/messages/{id}` címen `GET` metódussal. Példa: `http://www.learnwebservices.com/crystalball/api/messages/e306c8ca-4ae5-41ab-9f5e-5a193c4a5596`.
 
 ### Jóslat módosítása
 
