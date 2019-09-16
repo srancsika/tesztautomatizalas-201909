@@ -6,7 +6,8 @@ Ebbe az alkalmazásba a felhasználók jóslatokat fogalmazhatnak meg, amit a re
 Megadható, hogy mikor legyen olvasható a jóslat, akkor kinyílik, és meg lehet nézni annak tartalmát.
  
 Felhasználói felülettel nem rendelkezik, csupán RESTful webszolgáltatásokat biztosít, melyen keresztül más 
-alkalmazások férhetnek hozzá. A `http://www.learnwebservices.com/crystalball/api/messages` címen érhető el.
+alkalmazások férhetnek hozzá. A `http://www.learnwebservices.com/crystalball/api/messages/` címen érhető el
+(vigyázz a perjelre a végén!).
 
 Az alkalmazás tartalmaz (legalább) egy hibát. Keresd meg!
 
@@ -28,7 +29,7 @@ Milyen teszteseteket írnál még? Mi okoz nehézséget az alkalmazás teszetel�
 
 ### Jóslat létrehozása
 
-A `/api/messages` címre kell elküldeni `POST` metódussal a következő JSON dokumentumot:
+A `/api/messages/` címre kell elküldeni `POST` metódussal a következő JSON dokumentumot:
 
 ```javascript
 {
@@ -40,15 +41,15 @@ A `/api/messages` címre kell elküldeni `POST` metódussal a következő JSON d
 
 ### Jóslatok listázása
 
-A `/api/messages` címen `GET` metódussal.
+A `/api/messages/` címen `GET` metódussal.
 
 ### Jóslat lekérése
 
-A `/api/messages={id}` címen `GET` metódussal. Példa: `http://localhost:8080/api/messages/e306c8ca-4ae5-41ab-9f5e-5a193c4a5596`.
+A `/api/messages/{id}` címen `GET` metódussal. Példa: `http://localhost:8080/api/messages/e306c8ca-4ae5-41ab-9f5e-5a193c4a5596`.
 
 ### Jóslat módosítása
 
-A `/api/messages={id}` címen `POST` metódussal. Csak a tartalmat lehet módosítani:
+A `/api/messages/{id}` címen `POST` metódussal. Csak a tartalmat lehet módosítani:
 
 ```javascript
 {
@@ -58,4 +59,4 @@ A `/api/messages={id}` címen `POST` metódussal. Csak a tartalmat lehet módos�
 
 ### Jóslat törlése
 
-A `/api/messages={id}` címen `DELETE` metódussal.
+A `/api/messages/{id}` címen `DELETE` metódussal.
